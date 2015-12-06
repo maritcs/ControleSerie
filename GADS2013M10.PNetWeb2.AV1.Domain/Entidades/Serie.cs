@@ -14,12 +14,16 @@ namespace GADS2013M10.PNetWeb2.AV1.Domain.Entidades
         [Display(Name="Nome da Série")]
         public string NomeSerie { get; set; }
 
+        [Display(Name = "Nome do Episódio")]
+        public string NomeEpisodio { get; set; }
+
         public string Criador { get; set; }
 
         [Display(Name = "Sinopse da Temporada")]
         public string SinopseTemporada { get; set; }
 
         [Display(Name = "Data de Lançamento")]
+        [DisplayFormat(DataFormatString = "{0:dd/mm/yy}", ApplyFormatInEditMode = true)]
         public DateTime DataLancamento { get; set; }
 
         [Display(Name = "Foto da Capa")]
@@ -28,7 +32,8 @@ namespace GADS2013M10.PNetWeb2.AV1.Domain.Entidades
         [Display(Name = "Sinopse do Episódio")]
         public string SinopseEpisodio { get; set; }
 
-        [Display(Name = "Data em que o Episódio foi ao ar")]
+        [Display(Name = "Foi ao ar em")]
+        [DisplayFormat(DataFormatString = "{0:dd/mm/yy}", ApplyFormatInEditMode = true)]
         public DateTime DataEpAr { get; set; }
 
         [Display(Name = "Duração")]
@@ -75,7 +80,6 @@ namespace GADS2013M10.PNetWeb2.AV1.Domain.Entidades
         {
             [Display(Name="Em Produção")]
             EmProducao,
-
             Suspensa,
             Finalizada,
             Piloto

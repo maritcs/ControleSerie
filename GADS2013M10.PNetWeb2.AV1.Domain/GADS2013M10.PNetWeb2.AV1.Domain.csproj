@@ -50,6 +50,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Contexto\INFNETDbContext.cs" />
     <Compile Include="Contexto\InfnetGridDbContext.cs" />
     <Compile Include="Contexto\INFNETGridDbContext1.cs" />
     <Compile Include="Entidades\Episodio.cs" />

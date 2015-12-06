@@ -14,26 +14,57 @@
         <th>
             @Html.DisplayNameFor(model => model.Nome)
         </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Sigla)
-        </th>
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Nome)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Sigla)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.PaisId }) |
-            @Html.ActionLink("Details", "Details", new { id=item.PaisId }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.PaisId })
-        </td>
-    </tr>
-}
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nome)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.PaisId }) |
+                @Html.ActionLink("Details", "Details", new { id = item.PaisId }) |
+                @Html.ActionLink("Excluir", "Excluir", new { id = item.PaisId }, new { @class = "excluir" })
+            </td>
+        </tr>
+    }
 
 </table>
+
+@section Scripts{
+    <script>
+        $(function () {
+            var linhaAtual;
+
+            //$("#menuMedicos").addClass("active");
+
+
+            $(".excluir").on("click", function () {
+                if (confirm("Confirma a exclusão?")) {
+                    var urlExclusao = $(this).attr("href");
+                    linhaAtual = $(this).closest("tr");
+
+
+                    $.ajax({
+                        url: urlExclusao,
+                        type: "POST"
+                    }).done(function (excluiu) {
+                        if (excluiu) {
+                            linhaAtual.remove();
+                        } else {
+                            alert("Ocorreu algum problema na exclusão :(");
+                        }
+                    }).fail(function () {
+                        alert("Ocorreu algum erro :(");
+                    });
+                }
+
+
+                return false;
+            });
+        });
+
+    </script>
+}

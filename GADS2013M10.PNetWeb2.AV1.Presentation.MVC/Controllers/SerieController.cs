@@ -6,13 +6,16 @@ using System.Web.Mvc;
 using GADS2013M10.PNetWeb2.AV1.Domain.Contexto;
 using GADS2013M10.PNetWeb2.AV1.Domain.Entidades;
 using System.Data.Entity;
+using System.Net;
 
 namespace GADS2013M10.PNetWeb2.AV1.Presentation.MVC.Controllers
 {
     public class SerieController : Controller
     {
         //private InfnetGridDbContext db = new InfnetGridDbContext();
-        private INFNETGridDbContext1 db = new INFNETGridDbContext1();
+        //private INFNETGridDbContext1 db = new INFNETGridDbContext1();
+        private INFNETDbContext db = new INFNETDbContext();
+        
 
         // GET: Serie
         public ActionResult Index()
@@ -21,13 +24,20 @@ namespace GADS2013M10.PNetWeb2.AV1.Presentation.MVC.Controllers
             return View(serie);
         }
 
+        public ActionResult Detalhes(int id = 0)
+        {
+            Serie serie = db.Series.Find(id);
+            return View(serie);
+        }
+
+
         public ActionResult Adicionar()
         {
-            ViewBag.PaisId = new SelectList(db.Paises, "PaisId", "Nome", "Sigla");
+            ViewBag.PaisId = new SelectList(db.Paises, "PaisId", "Nome");
             ViewBag.GeneroId = new SelectList(db.Generos, "GeneroId", "NomeGenero");
-            ViewBag.EpisodioId = new SelectList(db.Episodios, "EpisodioId", "NomeEpisodio", "NumEpisodio");
+            ViewBag.EpisodioId = new SelectList(db.Episodios, "EpisodioId", "NumEpisodio");
             ViewBag.TemporadaId = new SelectList(db.Temporadas, "TemporadaId", "NumTemp");
-            ViewBag.CanalTvId = new SelectList(db.CanaisTv, "CanalTvId", "NomeCanal", "NumCanal");
+            ViewBag.CanalTvId = new SelectList(db.CanaisTv, "CanalTvId", "NomeCanal");
             return View();
         }
 
@@ -41,11 +51,11 @@ namespace GADS2013M10.PNetWeb2.AV1.Presentation.MVC.Controllers
                 return RedirectToAction("Index");
             }
 
-            ViewBag.PaisId = new SelectList(db.Paises, "PaisId", "Nome", "Sigla", serie.PaisId);
+            ViewBag.PaisId = new SelectList(db.Paises, "PaisId", "Nome", serie.PaisId);      
             ViewBag.GeneroId = new SelectList(db.Generos, "GeneroId", "NomeGenero", serie.GeneroId);
-            ViewBag.EpisodioId = new SelectList(db.Episodios, "EpisodioId", "NomeEpisodio", "NumEpisodio", serie.EpisodioId);
+            ViewBag.EpisodioId = new SelectList(db.Episodios, "EpisodioId", "NumEpisodio", serie.EpisodioId);
             ViewBag.TemporadaId = new SelectList(db.Temporadas, "TemporadaId", "NumTemp", serie.TemporadaId);
-            ViewBag.CanalTvId = new SelectList(db.CanaisTv, "CanalTvId", "NomeCanal", "NumCanal", serie.CanalTvId);
+            ViewBag.CanalTvId = new SelectList(db.CanaisTv, "CanalTvId", "NomeCanal", serie.CanalTvId);
             return View(serie);
         }
 

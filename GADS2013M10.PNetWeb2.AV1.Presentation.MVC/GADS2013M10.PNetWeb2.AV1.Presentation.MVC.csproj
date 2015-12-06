@@ -153,6 +153,8 @@
     <Content Include="Views\Pais\Adicionar.cshtml" />
     <Content Include="Views\Temporada\Index.cshtml" />
     <Content Include="Views\Temporada\Adicionar.cshtml" />
+    <Content Include="Views\Serie\Detalhes.cshtml" />
+    <Content Include="Views\Serie\Excluir.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

@@ -1,0 +1,178 @@
+﻿@model GADS2013M10.PNetWeb2.AV1.Domain.Entidades.Serie
+
+@{
+    ViewBag.Title = "Detalhes";
+}
+
+<h2>Detalhes</h2>
+
+<div>
+    <h4>Serie</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.NomeSerie)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NomeSerie)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Temporadas.NumTemp)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Temporadas.NumTemp)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SinopseTemporada)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SinopseTemporada)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NomeEpisodio)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NomeEpisodio)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Episodios.NumEpisodio)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Episodios.NumEpisodio)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SinopseEpisodio)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SinopseEpisodio)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DataEpAr)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DataEpAr)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Duracao)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Duracao)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CanaisTv.NomeCanal)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CanaisTv.NomeCanal)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Generos.NomeGenero)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Generos.NomeGenero)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Paises.Nome)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Paises.Nome)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Criador)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Criador)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DataLancamento)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DataLancamento)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Status)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Status)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CaminhoArq)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CaminhoArq)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TipoArq)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TipoArq)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Download)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Download)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Assitido)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Assitido)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Legenda)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Legenda)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FotoCapa)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FotoCapa)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.SerieId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

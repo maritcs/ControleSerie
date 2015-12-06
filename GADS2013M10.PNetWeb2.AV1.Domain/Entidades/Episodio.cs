@@ -11,9 +11,6 @@ namespace GADS2013M10.PNetWeb2.AV1.Domain.Entidades
     {
         public int EpisodioId { get; set; }
 
-        [Display(Name = "Nome do Episódio")]
-        public string NomeEpisodio { get; set; }
-
         [Display(Name = "Número do Episódio")]
         public string NumEpisodio { get; set; }
         

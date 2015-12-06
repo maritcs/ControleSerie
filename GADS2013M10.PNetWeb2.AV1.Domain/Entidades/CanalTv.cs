@@ -14,9 +14,6 @@ namespace GADS2013M10.PNetWeb2.AV1.Domain.Entidades
         [Display(Name = "Nome do Canal")]
         public string NomeCanal { get; set; }
 
-        [Display(Name = "Número do Canal")]
-        public string NumCanal { get; set; }
-
         public virtual ICollection<Serie> Series { get; set; }
     }
 }
