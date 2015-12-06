@@ -1,0 +1,177 @@
+﻿@model IEnumerable<GADS2013M10.PNetWeb2.AV1.Domain.Entidades.Serie>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.CanaisTv.NomeCanal)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Episodios.NomeEpisodio)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Generos.NomeGenero)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Paises.Nome)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Temporadas.NumTemp)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NomeSerie)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Criador)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SinopseTemporada)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DataLancamento)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FotoCapa)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SinopseEpisodio)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DataEpAr)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Duracao)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Download)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Assitido)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CaminhoArq)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TipoArq)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Legenda)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Status)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.CanaisTv.NomeCanal)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Episodios.NomeEpisodio)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Generos.NomeGenero)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Paises.Nome)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Temporadas.NumTemp)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NomeSerie)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Criador)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SinopseTemporada)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DataLancamento)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FotoCapa)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SinopseEpisodio)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DataEpAr)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Duracao)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Download)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Assitido)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CaminhoArq)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TipoArq)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Legenda)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Status)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.SerieId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.SerieId }) |
+            @Html.ActionLink("Excluir", "Excluir", new { id = item.SerieId }, new { @class = "excluir" })
+        </td>
+    </tr>
+}
+
+</table>
+
+@section Scripts{
+    <script>
+        $(function () {
+            var linhaAtual;
+
+            //$("#menuMedicos").addClass("active");
+
+
+            $(".excluir").on("click", function () {
+                if (confirm("Confirma a exclusão?")) {
+                    var urlExclusao = $(this).attr("href");
+                    linhaAtual = $(this).closest("tr");
+
+
+                    $.ajax({
+                        url: urlExclusao,
+                        type: "POST"
+                    }).done(function (excluiu) {
+                        if (excluiu) {
+                            linhaAtual.remove();
+                        } else {
+                            alert("Ocorreu algum problema na exclusão :(");
+                        }
+                    }).fail(function () {
+                        alert("Ocorreu algum erro :(");
+                    });
+                }
+
+
+                return false;
+            });
+        });
+
+    </script>
+}

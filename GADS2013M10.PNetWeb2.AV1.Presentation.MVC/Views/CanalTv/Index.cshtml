@@ -1,0 +1,39 @@
+﻿@model IEnumerable<GADS2013M10.PNetWeb2.AV1.Domain.Entidades.CanalTv>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.NomeCanal)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NumCanal)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.NomeCanal)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NumCanal)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.CanalTvId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.CanalTvId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.CanalTvId })
+        </td>
+    </tr>
+}
+
+</table>
