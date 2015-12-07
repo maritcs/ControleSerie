@@ -56,6 +56,8 @@
     <Compile Include="Entidades\Episodio.cs" />
     <Compile Include="Entidades\Genero.cs" />
     <Compile Include="Entidades\Pais.cs" />
+    <Compile Include="Entidades\Pesquisa.cs" />
+    <Compile Include="Entidades\ResultadoPesquisa.cs" />
     <Compile Include="Entidades\Serie.cs" />
     <Compile Include="Entidades\CanalTv.cs" />
     <Compile Include="Entidades\Temporada.cs" />

@@ -4,10 +4,10 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+<h2>Lista de Séries</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Adicionar nova série", "Adicionar", null, new { @class = "btn btn-primary" })
 </p>
 <table class="table">
     <tr>
@@ -68,7 +68,7 @@
         $(function () {
             var linhaAtual;
 
-            //$("#menuMedicos").addClass("active");
+            $("#menuSerie").addClass("active");
 
 
             $(".excluir").on("click", function () {

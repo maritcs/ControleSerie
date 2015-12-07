@@ -12,20 +12,6 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GADS2013M10.PNetWeb2.AV1.Domain", "GADS2013M10.PNetWeb2.AV1.Domain\GADS2013M10.PNetWeb2.AV1.Domain.csproj", "{C84353BB-49C6-48C4-A7AC-8E692F2FC7B2}"
 EndProject
 Global
-	GlobalSection(TeamFoundationVersionControl) = preSolution
-		SccNumberOfProjects = 3
-		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
-		SccTeamFoundationServer = https://alunosinfnetgadsm2013.visualstudio.com/defaultcollection
-		SccLocalPath0 = .
-		SccProjectUniqueName1 = GADS2013M10.PNetWeb2.AV1.Domain\\GADS2013M10.PNetWeb2.AV1.Domain.csproj
-		SccProjectTopLevelParentUniqueName1 = GADS2013M10.PNetWeb2.AV1.Solution.sln
-		SccProjectName1 = GADS2013M10.PNetWeb2.AV1.Domain
-		SccLocalPath1 = GADS2013M10.PNetWeb2.AV1.Domain
-		SccProjectUniqueName2 = GADS2013M10.PNetWeb2.AV1.Presentation.MVC\\GADS2013M10.PNetWeb2.AV1.Presentation.MVC.csproj
-		SccProjectTopLevelParentUniqueName2 = GADS2013M10.PNetWeb2.AV1.Solution.sln
-		SccProjectName2 = GADS2013M10.PNetWeb2.AV1.Presentation.MVC
-		SccLocalPath2 = GADS2013M10.PNetWeb2.AV1.Presentation.MVC
-	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
