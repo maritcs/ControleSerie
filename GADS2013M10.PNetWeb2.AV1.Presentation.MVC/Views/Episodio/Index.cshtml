@@ -1,0 +1,70 @@
+﻿@model IEnumerable<GADS2013M10.PNetWeb2.AV1.Domain.Entidades.Episodio>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Episódio</h2>
+
+<p>
+    @Html.ActionLink("Adicionar novo Episódio", "Adicionar", null, new { @class = "btn btn-primary" })
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.NumEpisodio)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.NumEpisodio)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.EpisodioId }) |
+                @Html.ActionLink("Details", "Details", new { id = item.EpisodioId }) |
+                @Html.ActionLink("Excluir", "Excluir", new { id = item.EpisodioId }, new { @class = "excluir" })
+            </td>
+        </tr>
+    }
+
+</table>
+
+@section Scripts{
+    <script>
+        $(function () {
+            var linhaAtual;
+
+            //$("#menuMedicos").addClass("active");
+
+
+            $(".excluir").on("click", function () {
+                if (confirm("Confirma a exclusão?")) {
+                    var urlExclusao = $(this).attr("href");
+                    linhaAtual = $(this).closest("tr");
+
+
+                    $.ajax({
+                        url: urlExclusao,
+                        type: "POST"
+                    }).done(function (excluiu) {
+                        if (excluiu) {
+                            linhaAtual.remove();
+                        } else {
+                            alert("Ocorreu algum problema na exclusão :(");
+                        }
+                    }).fail(function () {
+                        alert("Ocorreu algum erro :(");
+                    });
+                }
+
+
+                return false;
+            });
+        });
+
+    </script>
+}
