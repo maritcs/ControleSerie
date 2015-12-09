@@ -14,7 +14,7 @@ namespace GADS2013M10.PNetWeb2.AV1.Presentation.MVC.Controllers
 
         public ActionResult Index()
         {
-            //ViewBag.Serie = new SelectList(db.Series, "SerieId", "NomeSerie");
+         
             ViewBag.CanalTv = new SelectList(db.CanaisTv, "CanalTvId", "NomeCanal");
 
             return View();
